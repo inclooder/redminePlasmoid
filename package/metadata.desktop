@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=redminePlasmoid
+Comment=redminePlasmoid
+
+Icon=/icon.png
+Type=Service
+ServiceTypes=Plasma/Applet,Plasma/PopupApplet
+
+
+X-KDE-Library=plasma_applet_redminePlasmoid
+X-KDE-PluginInfo-Author=Inclooder
+X-KDE-PluginInfo-Email=inclooder@gmail.com
+X-KDE-PluginInfo-Name=redminePlasmoid
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://github.com/inclooder
+X-KDE-PluginInfo-Category=Utilities
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-Plasma-Requires-FileDialog=Unused
+X-Plasma-Requires-LaunchApp=Unused
+X-Plasma-DefaultSize=400,400
