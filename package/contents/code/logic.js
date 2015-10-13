@@ -1,5 +1,12 @@
+var isUpdate = {
+  hours: false,
+  tasks: false
+};
+
 
 function updateHours(){
+  if(isUpdate.hours === true) return;
+  isUpdate.hours = true;
   var today = new Date();
   today = today.toISOString().substring(0, 10);
   var url = getRedmineUrl() + "/time_entries.json?from=" + today;
@@ -15,6 +22,7 @@ function updateHours(){
       }
       root.hoursSpentToday = timeSpent;
     }
+    isUpdate.hours = false;
   });
 }
 
@@ -23,6 +31,8 @@ function getRedmineUrl(){
 }
 
 function updateTasks(){
+  if(isUpdate.tasks === true) return;
+  isUpdate.tasks = true;
   var url = getRedmineUrl() + "/issues.json?assigned_to_id=me";
   request(url, function(xhr){
     if(xhr.readyState == 4 && xhr.status == 200){
@@ -33,6 +43,7 @@ function updateTasks(){
       }
       
     }
+    isUpdate.tasks = false;
   });
 }
 
